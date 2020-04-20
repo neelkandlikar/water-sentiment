@@ -1,0 +1,135 @@
+---
+title: "How much do we know about global groundwater resources, and where?"
+author: "An undergraduate research opportunity during COVID-19"
+date: "Applications accepted through May 31, 2020"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2-VD6HWbpDs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+
+# About the position
+
+We seek an undergraduate student with data science and programming skills to mine information from academic papers on groundwater and aquifers available on the Web of Science. This is an independent data science research position ideally suited for a self-sufficient student, and the student should be comfortable working with messy data sets, self-solving problems that arise, and writing clear and expressive code with instructive comments. This research will be supervised by 1 PhD and 3 PhD students from NASA-JPL, CUNY, Stanford, and UC Davis, and will be published. For the motivated applicant, this is an opportunity to gain experience co-authoring an academic research paper. 
+
+> Compensation: $5,000 stipend
+
+> Start date: ASAP
+
+> End date: July 31, 2020
+
+> Location: remote
+
+### Qualifications 
+
+Command of either `R` or `Python` is a must. Experience in, or a strong desire to learn how to use XML, regular expressions, natural language processing, and application programming interfaces (APIs) is also required. A demonstrated interest in groundwater, specific knowledge of the Web of Science API, and a desire to co-write and publish an academic paper will be extremely helpful in this role, although these qualifications are not explicitly required. Priority will be given to undergraduate students with relevant experience and who [lost work study positions as a result of the Coronavirus epidemic](https://www.chronicle.com/article/When-Covid-19-Closed-Colleges/248345).
+
+
+### Inquiries
+
+Please email **kyra.hk.kim.gmail.com** a brief letter of interest, a resume, and any relevant data science projects that demonstrate your ability for self-directed study. 
+
+Motivated applicants are encouraged to carefully read the following project scope in order to familiarize themselves with the work at hand.
+
+
+
+***
+
+
+# Abstract
+
+[Groundwater](https://en.wikipedia.org/wiki/Groundwater) is critical to global food systems and drinking water. Groundwater is also hard to study: hidden beneath our feet in complex underground aquifers. This makes scientific accounting of groundwater inventories exceptionally difficult at the global scale. We propose a meta-study of global groundwater research to assemble the first global picture of geographic trends in groundwater research. The work will employ and mentor an undergraduate in need, who lost work due to COVID-19.
+
+# Context 
+
+Groundwater is a [valuable](https://inweh.unu.edu/wp-content/uploads/2018/12/Groundwater-and-Sustainable-Development-Goals-Analysis-of-Interlinkages.pdf) and [stressed](https://www.nature.com/articles/nature11295) freshwater resource that serves as the primary drinking water supply for more than [2 billion people in the world](https://sustainabledevelopment.un.org/content/documents/1711Water%20for%20a%20Sustainable%20World.pdf). However, despite its [crucial role in human health, agriculture, trade, and Earth’s energy cycle](https://www.forbes.com/sites/natalieparletta/2019/07/17/the-importance-of-groundwater-and-of-predicting-human-impacts-on-it/#507c140b1614), we have little understanding on where groundwater studies have been conducted and how the [study of groundwater](https://en.wikipedia.org/wiki/Hydrogeology) has evolved over time and across regions. Because groundwater is easy to overlook, hundreds of groundwater scientists (including us), were part of a [global call to action](http://groundwaterstatement.org) to increase awareness around the importance of groundwater for sustainable resilience to climate change. Critical to an increased awareness is the need for more information on the state,sentiment, and topics of groundwater studies over time.
+
+# Significance 
+
+We seek to answer some relatively basic but very fundamental questions: where is groundwater studied, how much has it been studied, how have sentiments around groundwater changed over time, and what are the key topics? However simplistic, national borders, financial disparities, and international tensions exacerbated by water resource insecurity challenge this type of accounting. We believe that knowledge of the state of groundwater resources will catalyze cooperation to achieve a sustainable water resources future. Information is key to this process. By assembling the first global picture of the geography of groundwater research, we will contribute to laying the foundation for a sustainable future.
+
+# Goal
+
+The goal of this project combines a scientific motivation with a desire to mitigate some of the disruptions to academia around COVID-19. Scientifically, we seek to build the first comprehensive study of the geography of groundwater research over time. We seek to identify regions rich in groundwater research, regions not understood, and how sentiments and topics in groundwater research have changed across regions and over time. We also seek to provide an opportunity to one or more undergraduate researchers with relevant experience through funding, mentorship, and co-authorship in peer-reviewed publication. We will compile the results of this research as a peer-reviewed publication for scientific audiences and an interactive website intended to communicate our science to the public.
+
+
+# Project Milestones 
+
+* *April*: Hiring.
+
+* *May-June*: We will mentor our apprentice(s) to assemble programming infrastructure, conduct our analyses, and write a manuscript for publication.
+
+* *July*: Submission to a special issue in "Water Resources Research" journal centered around sustainability in global aquifers. Preparation of an interactive web-tool to access and explore data and findings.
+
+* *December*: Publication of a press-release to announce the completion of research to our broader community and launch of the interactive web tool to explore the archive and findings.
+
+
+
+
+
+# Methods
+
+
+This bibliometrics study will draw on established approaches for handling large corpora, drawing from [text mining](https://en.wikipedia.org/wiki/Text_mining), [natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing), and [Latent Dirichlet Allocation (LDA)](http://www.jmlr.org/papers/v3/blei03a) topic models in order to analyze sentiment trends in groundwater-specific scientific literature over time. 
+
+First, a corpus of relevant groundwater literature will be mined by searching for groundwater related keywords (e.g., "groundwater", "aquifer", "hydrogeology") in article abstract text using the [Web of Science](https://clarivate.com/webofsciencegroup/solutions/xml-and-apis/) [API](https://en.wikipedia.org/wiki/Application_programming_interface). Once literature has been identified, we will characterize the sentiment of each paper’s abstract using three approaches of increasing complexity and accuracy: (1) classical [sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) approaches based on "bag of words" techniques, (2) a pre-trained neural network [BERT](https://github.com/google-research/bert) models for more advanced, context-sensitive sentiment analysis, and (3) a pre-trained neural network called [SciBERT](https://github.com/allenai/scibert), specifically designed for pattern recognition in scientific manuscripts. If the manuscript includes a study site, we will determine the location(s) for that study with similar pattern-matching techniques. 
+
+This information will allow us to address our key question whether the sentiment of groundwater studies has changed over time, coincident with global groundwater resource depletion, and how trends vary over time and across regions worldwide.
+
+Sentiment analysis via "bag of words" techniques works by categorizing words as either positive, negative, or neutral in connotation, enabling us to track the evolving state of  groundwater science at key aquifers around the world. For example, frequent use of negative words such as "scarcity", "depletion", and "competition" would indicate groundwater resources in a certain region are being contentiously sought after. In  contrast, increased frequency of positive words such as "collaboration", "stable", and "sustainable" would highlight the progress in groundwater sustainability. However, these simple "bag of words" methods may miss context dependent sentiments. For example, "in Country A’s aquifer, we observed a reversal of groundwater depletion trends over time, evidenced by increasing groundwater levels" contains the word "depletion" but has a positive connotation. A pre-trained classifier like BERT or SciBERT may be able to resolve these nuances in context-dependent meaning. Moreover, we will manually verify that these methods work as intended, and make corrections as necessary.
+
+In order to understand the range of topics studied in the literature, we will fit LDA topic models to the corpus, and investigate the resulting clusters for prevailing themes in the literature. Next, we will segment the literature into 10-year-long bins in order to analyze decadal changes in topics, and relate these back to the sentiment scores over time and location.
+
+[The distribution of global groundwater resources](https://www.whymap.org/whymap/EN/Home/whymap_node.html) is well studied, but the distribution of global groundwater research remains unknown. We will compare the research discovered to these known locations, with an eye towards disparities in research abundance, and discuss these trends in terms of the hydrogeologic, climatic, and water management characteristics on a per-region basis.
+
+## Challenges
+
+We anticipate that because the number of published articles increases over time, this may amplify or dampen the sentiment and topic trends we seek to understand. Thus, we will iteratively experiment with various time frames over which to conduct analyses of temporal trends. For instance, one year time steps might be appropriate for recent research, but fail to capture a representative sample of papers in the year 1960. 
+
+Moreover, sentiment analysis depends on pre-selected lists of words that indicate either a "positive" or "negative" designation, or pre-trained neural networks like BERT that may not be trained on science-specific corpora. These lists are based on corpora of the English language, but do not necessarily include scientific language. Thus, a critical challenge we must overcome is the creation of a list of scientific words that connote positive and negative sentiment, specifically associated with groundwater (e.g., "contamination", "overdraft", "abstraction").
+
+
+## Pre Analysis Plan
+
+Preliminary work includes: assembling keyword lists to search the Web of Science API, mapping groundwater-science-specific words to sentiments, establishing coding workflows, and reviewing the body of literature on bibliometric studies of groundwater. After this initial work, we will be ready to carry on with the approach outlined in the Methods (above).
+
+
+# Meet the advising team
+
+We are a group of early career groundwater and remote sensing experts who recently met in Valencia, Spain at a conference on the [quest for sustainability in heavily stressed aquifers](https://connect.agu.org/aguchapmanconference/upcoming-chapmans/aquifers-sustainability). We forged friendships over our shared interests and this research project will mark our first professional collaboration on a research project as a group.
+
+
+
+<img style="float: left; margin: 0px 15px 15px 0px;" src="/Users/richpauloo/Desktop/kyra.png" width="150" /><h4>Kyra Kim</h4>
+*NASA Postdoctoral Fellow*, 
+**Jet Propulsion Laboratory at California Institute of Technology**
+Hi! I'm a Postdoctoral Fellow at the Terrestrial Hydrology group at JPL. I specialize in groundwater modeling and groundwater remote sensing. [More info on my research can be found here](http://kyrakim.com/).
+
+
+<img style="float: left; margin: 0px 15px 15px 0px;" src="/Users/richpauloo/Desktop/rich.jpg" width="150" /><h4>Rich Pauloo</h4>
+*PhD Candidate*, 
+**University of California, Davis Hydrologic Sciences Graduate Group**
+In my research as a hydrogeologist, I develop novel methods to monitor, mathematically model, and manage heavily stressed aquifers. [You can learn more about my research here](http://richpauloo.com/).
+
+
+<img style="float: left; margin: 0px 15px 15px 0px;" src="/Users/richpauloo/Desktop/corey.jpeg" width="150" />
+<h4>Corey Scher</h4>
+*PhD Student*, 
+**Graduate Center at the City University of New York**
+I am a PhD student working to generate information valuable for both water science and diplomacy; mainly using satellite and humanitarian data in settings where water is shared across international political boundaries.
+
+
+<img style="float: left; margin: 0px 15px 15px 0px;" src="/Users/richpauloo/Desktop/aakash.jpg" width="150" />
+<h4>Aakash Ahamed</h4>
+*PhD Candidate*, 
+**Stanford University Geophysics Department**
+I am a hydrogeophysicist developing scientific methods for satellite and airborne remote sensing measurements with applications to water resources, natural hazards, and agricultural systems.
+
+

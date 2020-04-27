@@ -52,7 +52,7 @@ failed_pages = []
 # create master dataframe with all the first article in the list
 
 idx = search_results.iloc[0]['dc:identifier'].split(':')[1]
-response = requests.get('https://api.elsevier.com/content/abstract/scopus_id/'+idx+'?view=META&apikey='+ api_key[2])
+response = requests.get('https://api.elsevier.com/content/abstract/scopus_id/'+idx+'?view=META_ABS&apikey='+ api_key[2])
 
 abstracts = pd.json_normalize(saveme.parse(response.text))
 

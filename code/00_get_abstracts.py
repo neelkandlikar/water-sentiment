@@ -16,13 +16,14 @@ import xmltodict as saveme
 from tqdm import tqdm_notebook
 
 
-# In[ ]:
+# In[385]:
 
 
 #pip install xmltodict
+wkdir
 
 
-# In[368]:
+# In[386]:
 
 
 wkdir = os.path.dirname(os.getcwd())
@@ -36,7 +37,7 @@ search_results['date'] = pd.to_datetime(search_results['prism:coverDate'], forma
 search_results = search_results[search_results.date.notna()]
 # search_results = search_results.set_index('date')
 
-api_key = open("/Users/corey/Documents/GitHub/WaterSentiment/code/keys.gitignore", "r").readlines()
+api_key = open(wkdir+'/code/keys.gitignore', "r").readlines()
 
 print('Master dataframe of search results imported')
 
@@ -79,12 +80,6 @@ print('Failed abstract retrievals: ' + str(len(failed_pages)), "\n", failed_page
 print("Ding, end of song!")
 
 
-# In[382]:
-
-
-idx
-
-
 # In[297]:
 
 
@@ -111,7 +106,7 @@ idx
 # cali.sum()
 
 
-# In[330]:
+# In[384]:
 
 
 # grps = pd.DataFrame(search_results.eid.groupby(search_results.index.year).count())
@@ -131,22 +126,4 @@ idx
 # ax.set_title('"ground water" OR groundwater OR ground-water OR aquifer')
 # plt.tight_layout()
 # plt.savefig('article_counts.png', dpi=300)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 

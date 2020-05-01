@@ -32,7 +32,7 @@ print('Master dataframe of search results imported')
 print('Beginning of song to retrieve abstracts:')
 
 #make an empty list to store failures
-failed_pages = []
+failed_pages = pd.DataFrame()
 
 # create master dataframe with all the first article in the list
 
@@ -53,13 +53,14 @@ for i, a in tqdm(search_results[1:].iterrows()):
         abstract = pd.json_normalize(saveme.parse(response.text))
         abstracts = abstracts.append(abstract)
     except:
-        failed_pages = failed_pages.append(idx)
+        failed_pages[i] = idx
         continue
     time.sleep(0.12)
     
 abstracts.to_csv(wkdir+'/data/abstracts_full.csv')
+failed_pages.to_csv(wkdir+'/data/failed_queries.csv')
 
-print('Failed abstract retrievals: ' + str(len(failed_pages)), "\n", failed_pages)
+print('Failed abstract retrievals (' + str(len(failed_pages))+') saved to '+ data_dir)
 
 print("Ding, end of song!")
 

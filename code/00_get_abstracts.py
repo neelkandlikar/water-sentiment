@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[370]:
-
-
 import pandas as pd
 import requests
 import math
@@ -13,18 +10,9 @@ import os
 import matplotlib.ticker as ticker
 import matplotlib.pyplot as plt
 import xmltodict as saveme
-from tqdm import tqdm_notebook
-
-
-# In[385]:
 
 
 #pip install xmltodict
-wkdir
-
-
-# In[386]:
-
 
 wkdir = os.path.dirname(os.getcwd())
 
@@ -35,14 +23,10 @@ search_results = pd.read_csv(data_dir+'/scopus_search_results.csv', low_memory =
 search_results['date'] = pd.to_datetime(search_results['prism:coverDate'], format='%Y-%m-%d', errors='coerce')
 
 search_results = search_results[search_results.date.notna()]
-# search_results = search_results.set_index('date')
 
 api_key = open(wkdir+'/code/keys.gitignore', "r").readlines()
 
 print('Master dataframe of search results imported')
-
-
-# In[383]:
 
 
 print('Beginning of song to retrieve abstracts:')
@@ -80,10 +64,6 @@ print('Failed abstract retrievals: ' + str(len(failed_pages)), "\n", failed_page
 print("Ding, end of song!")
 
 
-# In[297]:
-
-
-
 # dates = []
 # cals = []
 
@@ -97,7 +77,7 @@ print("Ding, end of song!")
 #         continue
 
 
-# In[303]:
+# In[390]:
 
 
 # cali = pd.DataFrame({'dates': dates, 'calis': cals})

@@ -11,6 +11,7 @@ import matplotlib.ticker as ticker
 import matplotlib.pyplot as plt
 import xmltodict as saveme
 from tqdm import tqdm
+import timeit
 
 
 #pip install xmltodict
@@ -33,12 +34,11 @@ print('Master dataframe of search results imported with '+str(len(search_results
 
 #split list into 19 chunks:
 
-chunks = range(0, int(1.9e5), int(1e4))
+chunks = range(0, int(1.5e5), int(1e4))
 
 print('Beginning of song to retrieve abstracts:')
 
-for i, chunk in tqdm(enumerate(chunks)):
-
+for i, chunk in enumerate(chunks):
     #make an empty list to store failures
     failed_pages = pd.DataFrame()
 
@@ -49,8 +49,7 @@ for i, chunk in tqdm(enumerate(chunks)):
 
     abstracts = pd.json_normalize(saveme.parse(response.text))
 
-
-    for i, a in tqdm(search_results[chunk+1:].iterrows()):
+    for i, a in tqdm(search_results[chunk+1:].iterrows(), desc='Chunk '+str(i)):
         try:
             #print("Working on article " + str(i) +' of'  + str(len(search_results)))
             #Get scupis ID:
@@ -71,6 +70,6 @@ for i, chunk in tqdm(enumerate(chunks)):
     print('Failed abstract retrievals (' + str(len(failed_pages))+') saved to '+ data_dir)
     
     print('Done with chunk '+str(i))
-    
+
 print("Ding, end of song!")
 

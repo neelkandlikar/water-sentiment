@@ -10,57 +10,67 @@ import os
 import matplotlib.ticker as ticker
 import matplotlib.pyplot as plt
 import xmltodict as saveme
+from tqdm import tqdm
 
 
 #pip install xmltodict
 
+# Get the working and data directory paths
 wkdir = os.path.dirname(os.getcwd())
-
 data_dir  = wkdir + '/data'
 
-search_results = pd.read_csv(data_dir+'/scopus_search_results.csv', low_memory = False)
+#Load in the SCOPUS WOS Search Results
+search_results = pd.read_csv(data_dir+'/scopus_search_results_r4.csv', low_memory = False)
 
-search_results['date'] = pd.to_datetime(search_results['prism:coverDate'], format='%Y-%m-%d', errors='coerce')
-
-search_results = search_results[search_results.date.notna()]
-
+# !! Import list of API Keys 
 api_key = open(wkdir+'/code/keys.gitignore', "r").readlines()
 
-print('Master dataframe of search results imported')
+# Choose your API key by changing the index of the list!!!
 
+api_key = api_key[0]
+
+print('Master dataframe of search results imported with '+str(len(search_results['eid'].unique()))+' entries.')
+
+#split list into 19 chunks:
+
+chunks = range(0, int(1.9e5), int(1e4))
 
 print('Beginning of song to retrieve abstracts:')
 
-#make an empty list to store failures
-failed_pages = pd.DataFrame()
+for i, chunk in tqdm(enumerate(chunks)):
 
-# create master dataframe with all the first article in the list
+    #make an empty list to store failures
+    failed_pages = pd.DataFrame()
 
-idx = search_results.iloc[0]['dc:identifier'].split(':')[1]
-response = requests.get('https://api.elsevier.com/content/abstract/scopus_id/'+idx+'?view=META_ABS&apikey='+ api_key[2])
+    # create master dataframe with all the first article in the list
 
-abstracts = pd.json_normalize(saveme.parse(response.text))
+    idx = search_results.iloc[chunk]['dc:identifier'].split(':')[1]
+    response = requests.get('https://api.elsevier.com/content/abstract/scopus_id/'+idx+'?view=META_ABS&apikey='+ api_key)
+
+    abstracts = pd.json_normalize(saveme.parse(response.text))
 
 
-for i, a in tqdm(search_results[1:].iterrows()):
-    try:
-        #print("Working on article " + str(i) +' of'  + str(len(search_results)))
-        #Get scupis ID:
-        idx = a['dc:identifier'].split(':')[1]
+    for i, a in tqdm(search_results[chunk+1:].iterrows()):
+        try:
+            #print("Working on article " + str(i) +' of'  + str(len(search_results)))
+            #Get scupis ID:
+            idx = a['dc:identifier'].split(':')[1]
 
-        #Format URL to retrieve the abstract:
-        response = requests.get('https://api.elsevier.com/content/abstract/scopus_id/'+idx+'?view=META_ABS&apikey='+ api_key[2])
-        abstract = pd.json_normalize(saveme.parse(response.text))
-        abstracts = abstracts.append(abstract)
-    except:
-        failed_pages[i] = idx
-        continue
-    time.sleep(0.12)
+            #Format URL to retrieve the abstract:
+            response = requests.get('https://api.elsevier.com/content/abstract/scopus_id/'+idx+'?view=META_ABS&apikey='+ api_key[2])
+            abstract = pd.json_normalize(saveme.parse(response.text))
+            abstracts = abstracts.append(abstract)
+        except:
+            failed_pages[i] = idx
+            continue
+        time.sleep(0.12)
+
+    abstracts.to_csv(wkdir+'/data/abstracts_chunk_'+str(i)+'.csv')
+    failed_pages.to_csv(wkdir+'/data/failed_queries_chunk'+str(i)+'.csv')
+
+    print('Failed abstract retrievals (' + str(len(failed_pages))+') saved to '+ data_dir)
     
-abstracts.to_csv(wkdir+'/data/abstracts_full.csv')
-failed_pages.to_csv(wkdir+'/data/failed_queries.csv')
-
-print('Failed abstract retrievals (' + str(len(failed_pages))+') saved to '+ data_dir)
-
+    print('Done with chunk '+str(i))
+    
 print("Ding, end of song!")
 

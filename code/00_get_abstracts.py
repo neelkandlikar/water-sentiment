@@ -34,7 +34,7 @@ print('Master dataframe of search results imported with '+str(len(search_results
 
 #split list into 19 chunks:
 
-chunks = range(0, int(1.5e5), 1e4)
+chunks = range(0, int(1.5e5), int(1e4))
 
 print('Beginning of song to retrieve abstracts:')
 

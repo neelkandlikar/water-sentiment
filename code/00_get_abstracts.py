@@ -62,10 +62,11 @@ for i, chunk in enumerate(chunks):
         except:
             failed_pages[i] = idx
             continue
-        time.sleep(0.12)
-
+            
         abstracts.to_csv(wkdir+'/data/abstracts_chunk_'+str(j)+'.csv')
         failed_pages.to_csv(wkdir+'/data/failed_queries_chunk'+str(j)+'.csv')
+
+        time.sleep(0.12)
 
     print('Failed abstract retrievals (' + str(len(failed_pages))+') saved to '+ data_dir)
     

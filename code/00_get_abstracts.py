@@ -49,7 +49,7 @@ for i, chunk in enumerate(chunks):
 
     abstracts = pd.json_normalize(saveme.parse(response.text))
 
-    for i, a in tqdm(search_results[chunk+1:].iterrows(), desc='Chunk '+str(i)):
+    for j, a in tqdm(search_results[chunk+1:].iterrows(), desc='Chunk '+str(i)):
         try:
             #print("Working on article " + str(i) +' of'  + str(len(search_results)))
             #Get scupis ID:
@@ -64,8 +64,8 @@ for i, chunk in enumerate(chunks):
             continue
         time.sleep(0.12)
 
-    abstracts.to_csv(wkdir+'/data/abstracts_chunk_'+str(i)+'.csv')
-    failed_pages.to_csv(wkdir+'/data/failed_queries_chunk'+str(i)+'.csv')
+        abstracts.to_csv(wkdir+'/data/abstracts_chunk_'+str(j)+'.csv')
+        failed_pages.to_csv(wkdir+'/data/failed_queries_chunk'+str(j)+'.csv')
 
     print('Failed abstract retrievals (' + str(len(failed_pages))+') saved to '+ data_dir)
     

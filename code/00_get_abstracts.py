@@ -34,7 +34,7 @@ print('Master dataframe of search results imported with '+str(len(search_results
 
 #split list into 19 chunks:
 
-chunks = range(0, int(1.5e5), 10)
+chunks = range(0, int(1.5e5), 1e4)
 
 print('Beginning of song to retrieve abstracts:')
 
@@ -49,7 +49,7 @@ for i, chunk in enumerate(chunks):
 
     abstracts = pd.json_normalize(saveme.parse(response.text))
 
-    for j, a in tqdm(search_results[chunk+1:chunk+10].iterrows(), desc='Chunk '+str(i)):
+    for j, a in tqdm(search_results[chunk+1:chunk+1e4].iterrows(), desc='Chunk '+str(i)):
         try:
             #print("Working on article " + str(i) +' of'  + str(len(search_results)))
             #Get scupis ID:

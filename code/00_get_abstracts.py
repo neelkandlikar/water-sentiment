@@ -60,7 +60,7 @@ for i, chunk in enumerate(chunks):
             abstract = pd.json_normalize(saveme.parse(response.text))
             abstracts = abstracts.append(abstract)
         except:
-            failed_pages[i] = idx
+            failed_pages[j] = idx
             continue
             
         abstracts.to_csv(wkdir+'/data/abstracts_chunk_'+str(j)+'.csv')

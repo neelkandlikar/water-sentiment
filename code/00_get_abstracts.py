@@ -49,7 +49,7 @@ for i, chunk in enumerate(chunks):
 
     abstracts = pd.json_normalize(saveme.parse(response.text))
 
-    for j, a in tqdm(search_results[chunk+1:chunk+1e4].iterrows(), desc='Chunk '+str(i)):
+    for j, a in tqdm(search_results[chunk+1:chunk+int(1e4)].iterrows(), desc='Chunk '+str(i)):
         try:
             #print("Working on article " + str(i) +' of'  + str(len(search_results)))
             #Get scupis ID:

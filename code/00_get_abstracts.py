@@ -23,8 +23,8 @@ data_dir  = wkdir + '/data'
 #Load in the SCOPUS WOS Search Results
 search_results = pd.read_csv(data_dir+'/scopus_search_results_r4.csv', low_memory = False)
 
-# !! Import list of API Keys 
-api_key = open(wkdir+'/code/keys.gitignore', "r").readlines()
+# !! Import list of API Keys
+api_key = open(wkdir+'/code/keys.gitignore', "r").read().splitlines()
 
 # Choose your API key by changing the index of the list!!!
 
@@ -34,7 +34,7 @@ print('Master dataframe of search results imported with '+str(len(search_results
 
 #split list into 19 chunks:
 
-chunks = range(0, int(1.5e5), int(1e4))
+chunks = range(0, int(1.5e5), 1e4)
 
 print('Beginning of song to retrieve abstracts:')
 
@@ -49,7 +49,7 @@ for i, chunk in enumerate(chunks):
 
     abstracts = pd.json_normalize(saveme.parse(response.text))
 
-    for j, a in tqdm(search_results[chunk+1:].iterrows(), desc='Chunk '+str(i)):
+    for j, a in tqdm(search_results[chunk+1:chunk+1e4].iterrows(), desc='Chunk '+str(i)):
         try:
             #print("Working on article " + str(i) +' of'  + str(len(search_results)))
             #Get scupis ID:
@@ -59,18 +59,22 @@ for i, chunk in enumerate(chunks):
             response = requests.get('https://api.elsevier.com/content/abstract/scopus_id/'+idx+'?view=META_ABS&apikey='+ api_key)
             abstract = pd.json_normalize(saveme.parse(response.text))
             abstracts = abstracts.append(abstract)
+            
+            time.sleep(0.12)
+            
         except:
             failed_pages[j] = idx
             continue
             
-        abstracts.to_csv(wkdir+'/data/abstracts_chunk_'+str(j)+'.csv')
-        failed_pages.to_csv(wkdir+'/data/failed_queries_chunk'+str(j)+'.csv')
-
-        time.sleep(0.12)
-
-    print('Failed abstract retrievals (' + str(len(failed_pages))+') saved to '+ data_dir)
+    abstracts.to_csv(wkdir+'/data/abstracts_chunk_'+str(i)+'.csv')
     
+    if len(failed_pages) > 0:
+        failed_pages.to_csv(wkdir+'/data/failed_queries_chunk'+str(i)+'.csv')
+        print('Failed abstract retrievals (' + str(len(failed_pages))+') saved to '+ data_dir)
+    else:
+        print('Zero failed retrievals.')
+        continue
+        
     print('Done with chunk '+str(i))
 
 print("Ding, end of song!")
-

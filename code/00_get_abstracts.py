@@ -56,7 +56,7 @@ for i, chunk in enumerate(chunks):
             idx = a['dc:identifier'].split(':')[1]
 
             #Format URL to retrieve the abstract:
-            response = requests.get('https://api.elsevier.com/content/abstract/scopus_id/'+idx+'?view=META_ABS&apikey='+ api_key[2])
+            response = requests.get('https://api.elsevier.com/content/abstract/scopus_id/'+idx+'?view=META_ABS&apikey='+ api_key)
             abstract = pd.json_normalize(saveme.parse(response.text))
             abstracts = abstracts.append(abstract)
         except:

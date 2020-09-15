@@ -1,2 +1,4 @@
 .DS_Store
 /.idea
+./results/abstracts_cleaned_tokenized_geo.csv
+./results/cleaned_tokenized.csv

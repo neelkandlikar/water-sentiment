@@ -1,0 +1,64 @@
+Ada-Vamoosa aquifer
+Arbuckle-Simpson aquifer
+Basin and Range basin-fill aquifers
+Basin and Range carbonate-rock aquifers
+Biscayne aquifer
+Blaine aquifer
+California Coastal Basin aquifers
+Cambrian-Ordovician aquifer system
+Castle Hayne aquifer
+Central Oklahoma aquifer
+Central Valley aquifer system
+Coastal lowlands aquifer system
+Colorado Plateaus aquifers
+Columbia Plateau basaltic-rock aquifers
+Columbia Plateau basin-fill aquifers
+Crystalline-rock aquifers
+Denver Basin aquifer system
+Early Mesozoic basin aquifers
+Edwards-Trinity aquifer system
+Floridan aquifer system
+Hawaiian aquifers
+High Plains aquifer
+Jacobsville aquifer
+Kingshill aquifer
+Lower Cretaceous aquifers
+Lower Tertiary aquifers
+Marshall aquifer
+Mississippi embayment aquifer system
+Mississippi River Valley alluvial aquifer
+Mississippian aquifers
+New York and New England carbonate-rock aquifers
+New York sandstone aquifers
+North Coast Limestone aquifer system
+Northern Atlantic Coastal Plain aquifer system
+Northern Rocky Mountains Intermontane Basins aquifer system
+Ordovician aquifers
+Ozark Plateaus aquifer system
+Pacific Northwest basaltic-rock aquifers
+Pacific Northwest basin-fill aquifers
+Paleozoic aquifers
+Pecos River Basin alluvial aquifer
+Pennsylvanian aquifers
+Piedmont and Blue Ridge carbonate-rock aquifers
+Piedmont and Blue Ridge crystalline-rock aquifers
+Puget Sound aquifer system
+Rio Grande aquifer system
+Roswell Basin aquifer system
+Rush Springs aquifer
+Sand and gravel aquifers of alluvial and glacial origin
+Seymour aquifer
+Silurian-Devonian aquifers
+Snake River Plain basaltic-rock aquifers
+Snake River Plain basin-fill aquifers
+South Coast aquifer
+Southeastern Coastal Plain aquifer system
+Southern Nevada volcanic-rock aquifers
+Surficial aquifer system
+Texas coastal uplands aquifer system
+Unconsolidated-deposit aquifers
+Upper carbonate aquifer
+Upper Cretaceous aquifers
+Upper Tertiary aquifers
+Valley and Ridge aquifers
+Willamette Lowland basin-fill aquifers

@@ -1,0 +1,64 @@
+Ada-Vamoosa aquifer (Oklahoma)
+Arbuckle-Simpson aquifer (Oklahoma)
+Basin and Range basin-fill aquifers (southwestern U.S.)
+Basin and Range carbonate-rock aquifers (southwestern U.S.)
+Biscayne aquifer (Florida)
+Blaine aquifer (Oklahoma and Texas)
+California Coastal Basin aquifers
+Cambrian-Ordovician aquifer system (northern Midwest)
+Castle Hayne aquifer (North Carolina)
+Central Oklahoma aquifer
+Central Valley aquifer system (California)
+Coastal lowlands aquifer system (Gulf Coast)
+Colorado Plateaus aquifers
+Columbia Plateau basaltic-rock aquifers
+Columbia Plateau basin-fill aquifers
+Crystalline-rock aquifers
+Denver Basin aquifer system
+Early Mesozoic basin aquifers (eastern U.S.)
+Edwards-Trinity aquifer system (Texas and Oklahoma)
+Floridan aquifer system
+Hawaiian aquifers (Hawaii)
+High Plains aquifer
+Jacobsville aquifer (Michigan)
+Kingshill aquifer (Virgin Islands)
+Lower Cretaceous aquifers (Colorado Plateaus area)
+Lower Tertiary aquifers (northern Great Plains)
+Marshall aquifer (Michigan)
+Mississippi embayment aquifer system
+Mississippi River Valley alluvial aquifer
+Mississippian aquifers (central and eastern U.S.)
+New York and New England carbonate-rock aquifers
+New York sandstone aquifers
+North Coast Limestone aquifer system (Puerto Rico)
+Northern Atlantic Coastal Plain aquifer system
+Northern Rocky Mountains Intermontane Basins aquifer system
+Ordovician aquifers (Tennessee and Kentucky)
+Ozark Plateaus aquifer system (Missouri)
+Pacific Northwest basaltic-rock aquifers
+Pacific Northwest basin-fill aquifers
+Paleozoic aquifers (northern Great Plains)
+Pecos River Basin alluvial aquifer (Texas and New Mexico)
+Pennsylvanian aquifers (central and eastern U.S.)
+Piedmont and Blue Ridge carbonate-rock aquifers (eastern U.S.)
+Piedmont and Blue Ridge crystalline-rock aquifers (eastern U.S.)
+Puget Sound aquifer system (Washington)
+Rio Grande aquifer system
+Roswell Basin aquifer system (New Mexico)
+Rush Springs aquifer (Oklahoma)
+Sand and gravel aquifers of alluvial and glacial origin (North of the line of glaciation)
+Seymour aquifer (Texas)
+Silurian-Devonian aquifers (northern Midwest)
+Snake River Plain basaltic-rock aquifers (Idaho)
+Snake River Plain basin-fill aquifers (Idaho)
+South Coast aquifer (Puerto Rico)
+Southeastern Coastal Plain aquifer system
+Southern Nevada volcanic-rock aquifers
+Surficial aquifer system (eastern U.S. )
+Texas coastal uplands aquifer system
+Unconsolidated-deposit aquifers (Alaska)
+Upper carbonate aquifer (Minnesota and Iowa)
+Upper Cretaceous aquifers (northern Great Plains)
+Upper Tertiary aquifers (Wyoming)
+Valley and Ridge aquifers (eastern U.S.)
+Willamette Lowland basin-fill aquifers (Oregon)

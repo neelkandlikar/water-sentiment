@@ -1,0 +1,37 @@
+1	Nubian Aquifer System (NAS)
+2	Northwestern Sahara Aquifer System (NWSAS)
+3	Murzuk‐Djado Basin
+4	Taoudeni‐Tanezrouft Basin
+5	Senegalo‐Mauritanian Basin
+6	Iullemeden‐Irhazer Aquifer System
+7	Lake Chad Basin
+8	Sudd Basin (Umm Ruwaba Aquifer)
+9	Ogaden‐Juba Basin
+10	Congo Basin
+11	Upper Kalahari‐Cuvelai‐Upper Zambezi Basin
+12	Lower Kalahari‐Stampriet Basin
+13	Karoo Basin
+14	Northern Great Plains Aquifer
+15	Cambro‐Ordovician Aquifer System
+16	Californian Central Valley Aquifer System
+17	Ogallala Aquifer (High Plains)
+18	Atlantic and Gulf Coastal Plains Aquifer
+19	Amazon Basin
+20	Maranhao Basin
+21	Guarani Aquifer System
+22	Arabian Aquifer System
+23	Indus Basin
+24	Ganges‐Brahmaputra Basin
+25	West Siberian Basin
+26	Tunguss Basin
+27	Angara‐Lena Basin
+28	Yakut Basin
+29	North China Aquifer System
+30	Song‐Liao Basin
+31	Tarim Basin
+32	Paris Basin
+33	Russian Platform Basins
+34	North Caucasus Basin
+35	Pechora Basin
+36	Great Artesian Basin
+37	Canning Basin
